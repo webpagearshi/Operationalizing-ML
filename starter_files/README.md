@@ -11,7 +11,9 @@ Project Link: https://automlsamplenotebookdata.blob.core.windows.net/automl-samp
  ![Architectural Diagram](https://github.com/webpagearshi/Operationalizing-ML/blob/master/starter_files/Images/Architectural%20Diagram.png "Architectural Diagram")
 
 ## Key Steps
-*TODO*: Write a short discription of the key steps. Remeber to include all the screenshots required to demonstrate key steps. 
+*Step 1*: Create and run AUto ML Experiment
+a. I have uploaded the dataset into the Azure Studio and created a Registered Dataset
+![Registered Dataset](https://github.com/webpagearshi/Operationalizing-ML/blob/master/starter_files/Images/Step1-Registered%20Dataset.JPG "Registered Dataset")
 
 ## Screen Recording
 *TODO* Provide a link to a screen recording of the project in action. Remember that the screencast should demonstrate:

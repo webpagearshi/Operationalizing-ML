@@ -12,8 +12,11 @@ Project Link: https://automlsamplenotebookdata.blob.core.windows.net/automl-samp
 
 ## Key Steps
 *Step 1*: Create and run AUto ML Experiment
-a. I have uploaded the dataset into the Azure Studio and created a Registered Dataset
+
+>a. I have uploaded the dataset into the Azure Studio and created a Registered Dataset
 ![Registered Dataset](https://github.com/webpagearshi/Operationalizing-ML/blob/master/starter_files/Images/Step1-Registered%20Dataset.JPG "Registered Dataset")
+>b. Configure a new compute cluster (VM size is Standard_VS12_v2 and minimum nodes is 1) and create a new Automated ML Run. Once the Experiment is completed you can see the Best Model.
+![AutoML Experiment Completed](https://github.com/webpagearshi/Operationalizing-ML/blob/master/starter_files/Images/Step1-Experiment%20Completed.JPG "AutoML Experiment")
 
 ## Screen Recording
 *TODO* Provide a link to a screen recording of the project in action. Remember that the screencast should demonstrate:

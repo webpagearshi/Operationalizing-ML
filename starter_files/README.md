@@ -19,12 +19,15 @@ In the first section we will configure a cloud based machine learning production
 *Step 2*: Create and run AUto ML Experiment
 
 >a. I have uploaded the dataset into the Azure Studio and created a Registered Dataset
+
 >Registered Dataset
-![Registered Dataset](https://github.com/webpagearshi/Operationalizing-ML/blob/master/starter_files/Images/Step1-Registered%20Dataset.JPG "Registered Dataset")
+>![Registered Dataset](https://github.com/webpagearshi/Operationalizing-ML/blob/master/starter_files/Images/Step1-Registered%20Dataset.JPG "Registered Dataset")
 
 >b. Configure a new compute cluster (VM size is Standard_VS12_v2 and minimum nodes is 1) and create a new Automated ML Run. Once the Experiment is completed you can see the Best Model.
+
 >AutoMl Experiment Completed
-![AutoML Experiment Completed](https://github.com/webpagearshi/Operationalizing-ML/blob/master/starter_files/Images/Step1-Experiment%20Completed.JPG "AutoML Experiment Completed")
+>![AutoML Experiment Completed](https://github.com/webpagearshi/Operationalizing-ML/blob/master/starter_files/Images/Step1-Experiment%20Completed.JPG "AutoML Experiment Completed")
+
 
 >Best Model
 >![Best Model](https://github.com/webpagearshi/Operationalizing-ML/blob/master/starter_files/Images/Step1-Best%20Model.JPG "Best Model-Voting Ensemble")
@@ -33,17 +36,20 @@ In the first section we will configure a cloud based machine learning production
 *Step 3*: Deploy the Model
 
 >I have selected the Best Model for Deployment, enabled authentication and deployed the model using Azure Container Instance.
+
 >Deployment Settings
 >![Deployment Settings](https://github.com/webpagearshi/Operationalizing-ML/blob/master/starter_files/Images/Step3-Deploying%20the%20Model%20Settings.JPG "Deploying the Best Model")
 
 
 *Step 4*: Enable Application Insights and retrieve logs
 
->a. Enabled Application Insights using Python SDK 
+>a. Enabled Application Insights using Python SDK
+
 >Application Insights enabled by running logs.py script
 >![Application Insights](https://github.com/webpagearshi/Operationalizing-ML/blob/master/starter_files/Images/Step4-Application%20Insights-Enabled.JPG "Application Insights")
 
 >b. View the logs in the terminal after we run the logs.py script
+
 >Logs
 >![Logs](https://github.com/webpagearshi/Operationalizing-ML/blob/master/starter_files/Images/Step4-Logs%20by%20logs.py-a.JPG "logs")
 >![Logs](https://github.com/webpagearshi/Operationalizing-ML/blob/master/starter_files/Images/Step4-Logs%20by%20logs.py-b.JPG "logs")
@@ -53,15 +59,19 @@ In the first section we will configure a cloud based machine learning production
 *Step 5*:Swagger Documentation
 
 >Azure provides swagger json file for deployed models. Heading to the Endpoints section->Details tab we can find the Swagger URL which we can use to download the file and save locally in the same folder as swagger.sh and serve.py files. When we run the swagger.sh script we will download the latest Swagger container and run it on port 9000. Running the script serve.py will start a python server on port 8000.
+
 >Screenshot showing that swagger runs on localhost showing the HTTP API methods and responses for the model.
 >![Swagger](https://github.com/webpagearshi/Operationalizing-ML/blob/master/starter_files/Images/Step5-Swagger%20runs%20on%20localhost.JPG "swagger runs on localhost")
 
 *Step 6*:Consume Model Endpoints and Benchmark the endpoint using Apache Benchmark
 
 >a. Consume Model Endpoints- Head to the consume tab in the Endpoints section and then note the REST Endpoint URI and Primary Key and then in the endpoint.py file modify the scoring_uri and key to match them respectively. Now execute the enddpoint.py file and you will see the json output from the model in the terminal.
+
+>Consume Model Endpoints
 >![endpoint](https://github.com/webpagearshi/Operationalizing-ML/blob/master/starter_files/Images/Step6-Endpoint%20result.JPG "Endpoint result")
 
 >b. Benchmarking-Make changes in the benchmark.sh file by replacing the authentication key with the primary key of the model and the REST uri with that of the model. After we have run the endpoint.py file a data.json file appears in the folder and then we will run the benchmark.sh script.
+
 >Screenshot showing that Apache Benchmark runs against the HTTP API using authentication keys to retrieve performance results.
 >![Benchmarking](https://github.com/webpagearshi/Operationalizing-ML/blob/master/starter_files/Images/Step6-Benchmark.sh%20log-a.JPG "Benchmarking")
 >![Benchmarking](https://github.com/webpagearshi/Operationalizing-ML/blob/master/starter_files/Images/Step6-Benchmark.sh%20log-b.JPG "Benchmarking")

@@ -90,6 +90,33 @@ Now that we have used Azure to configure a cloud based machine learning producti
 
 *Step 7*: Create , Publish and Consume a Pipeline
 
+> a. We will use the Auto ML Experiment which we have already run and the compute cluster we created earlier to create the Pipeline
+
+>Pipeline Created
+
+>![Pipeline](https://github.com/webpagearshi/Operationalizing-ML/blob/master/starter_files/Images/Step7-Pipeline%20Created%20Completed.JPG "Pipeline Created")
+
+>BankMarketing Dataset with AutoML Module
+
+>![Pipeline](https://github.com/webpagearshi/Operationalizing-ML/blob/master/starter_files/Images/Step7-BankMarketing%20Dataset%20with%20AutoML%20Module-Completed.JPG "AutoML Module")
+
+>b. After the pipeline_run object is created we publish the Pipeline
+
+>Pipeline section shows Pipeline Endpoint
+
+>![Pipeline](https://github.com/webpagearshi/Operationalizing-ML/blob/master/starter_files/Images/Step7-Pipeline-Endpoint.JPG "published pipeline")
+
+>Published Pipeline Overview showing a REST Endpoint and status Active
+
+>![Pipeline](https://github.com/webpagearshi/Operationalizing-ML/blob/master/starter_files/Images/Step7-Published%20Pipeline%20Overview.JPG "Published Pipeline")
+
+>c. Consume a Pipeline endpoint-The first step was to authenticate and then the published Pipeline was used to retrieve the endpoint using Python SDK.
+
+>Scheduled Run in the ML Studio
+
+>![Pipeline](https://github.com/webpagearshi/Operationalizing-ML/blob/master/starter_files/Images/Step7-Scheduled%20Run.JPG "Pipeline run")
+
+>![Pipeline](https://github.com/webpagearshi/Operationalizing-ML/blob/master/starter_files/Images/Step7-5.JPG "Pipeline")
 
 ## Screen Recording
 *TODO* Provide a link to a screen recording of the project in action. Remember that the screencast should demonstrate:

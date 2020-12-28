@@ -119,7 +119,13 @@ Now that we have used Azure to configure a cloud based machine learning producti
 >![Pipeline](https://github.com/webpagearshi/Operationalizing-ML/blob/master/starter_files/Images/Step7-5.JPG "Pipeline")
 
 ## Screen Recording
-*TODO* Provide a link to a screen recording of the project in action. Remember that the screencast should demonstrate:
+>[Screencast Link](https://youtu.be/rdz4DlNq-pE "Screencast for Project2-Operationalizing ML)
 
 ## Standout Suggestions
-*TODO (Optional):* This is where you can provide information about any standout suggestions that you have attempted.
+>While creating the Automated ML run I would like to chose validation type instead of using auto. I would also like to enable featurization for feature selection and make changes in feature type and impute with options for the features. Examine imbalanced classes which were detected in input and rectify the issue.
+
+>I would like to try the low priority option when creating the compute cluster and experiment with virtual machine sizes so that I can try and find a cheaper option without affecting the production model and endpoint consumption.
+
+>Use Batch Inference Pipeline to do predictions using parallelism. This increases productivity and optimized costs.
+
+#### The Udacity Course material and Microsoft Documentation has been used as reference.

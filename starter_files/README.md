@@ -26,7 +26,7 @@ In the first section we will configure a cloud based machine learning production
 
 >b. Configure a new compute cluster (VM size is Standard_VS12_v2 and minimum nodes is 1) and create a new Automated ML Run. Once the Experiment is completed you can see the Best Model.
 
->AutoMl Experiment Completed
+>AutoML Experiment Completed
 
 >![AutoML Experiment Completed](https://github.com/webpagearshi/Operationalizing-ML/blob/master/starter_files/Images/Step1-Experiment%20Completed.JPG "AutoML Experiment Completed")
 

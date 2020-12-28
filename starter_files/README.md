@@ -14,7 +14,7 @@ Project Link: https://automlsamplenotebookdata.blob.core.windows.net/automl-samp
 In the first section we will configure a cloud based machine learning production model, deployed it and then consumed it
 
 *Step 1*: Authentication
->Since I have used the Udacity workspace to complete this project I skipped this step as I did not have authorization to create a security principal.
+>Since I have used the Udacity workspace to complete this project I skipped this step as I did not have authorization to create a service principal.
 
 *Step 2*: Create and run AUto ML Experiment
 
@@ -64,7 +64,7 @@ In the first section we will configure a cloud based machine learning production
 
 *Step 5*:Swagger Documentation
 
->Azure provides swagger json file for deployed models. Heading to the Endpoints section->Details tab we can find the Swagger URL which we can use to download the file and save locally in the same folder as swagger.sh and serve.py files. When we run the swagger.sh script we will download the latest Swagger container and run it on port 9000. Running the script serve.py will start a python server on port 8000.
+>Azure provides swagger json file for deployed models. Heading to the Endpoints section->Details tab I found the Swagger URL which I used to download the file and saved it locally in the same folder as swagger.sh and serve.py files. Executing the swagger.sh script I downloaded the latest Swagger container and ran it on port 9000. Running the script serve.py started a python server on port 8000.
 
 >Screenshot showing that swagger runs on localhost showing the HTTP API methods and responses for the model.
 
@@ -72,13 +72,13 @@ In the first section we will configure a cloud based machine learning production
 
 *Step 6*:Consume Model Endpoints and Benchmark the endpoint using Apache Benchmark
 
->a. Consume Model Endpoints- Head to the consume tab in the Endpoints section and then note the REST Endpoint URI and Primary Key and then in the endpoint.py file modify the scoring_uri and key to match them respectively. Now execute the enddpoint.py file and you will see the json output from the model in the terminal.
+>a. Consume Model Endpoints- Head to the consume tab in the Endpoints section and then note the REST Endpoint URI and Primary Key and then in the endpoint.py file modify the scoring_uri and key to match them respectively. Now execute the enddpoint.py file and you will see the output from the model in the terminal.
 
 >Consume Model Endpoints
 
 >![endpoint](https://github.com/webpagearshi/Operationalizing-ML/blob/master/starter_files/Images/Step6-Endpoint%20result.JPG "Endpoint result")
 
->b. Benchmarking-Make changes in the benchmark.sh file by replacing the authentication key with the primary key of the model and the REST uri with that of the model. After we have run the endpoint.py file a data.json file appears in the folder and then we will run the benchmark.sh script.
+>b. Benchmarking-Make changes in the benchmark.sh file by replacing the authentication key with the primary key of the model and the REST uri with that of the model. After I ran the endpoint.py file, a data.json file appeared in the folder and then I ran the benchmark.sh script.
 
 >Screenshot showing that Apache Benchmark runs against the HTTP API using authentication keys to retrieve performance results.
 
@@ -86,11 +86,11 @@ In the first section we will configure a cloud based machine learning production
 >![Benchmarking](https://github.com/webpagearshi/Operationalizing-ML/blob/master/starter_files/Images/Step6-Benchmark.sh%20log-b.JPG "Benchmarking")
 >![Benchmarking](https://github.com/webpagearshi/Operationalizing-ML/blob/master/starter_files/Images/Step6-Benchmark.sh%20log-c.JPG "Benchmarking")
 
-Now that we have used Azure to configure a cloud based machine learning production model, deployed and consumed it we will move to the next section where we will use Python SDK to create, publish and consume a Pipeline.
+Now that I have used Azure to configure a cloud based machine learning production model, deployed and consumed it I will move to the next section where we will use Python SDK to create, publish and consume a Pipeline.
 
 *Step 7*: Create , Publish and Consume a Pipeline
 
-> a. We will use the Auto ML Experiment which we have already run and the compute cluster we created earlier to create the Pipeline
+> a. I used the Auto ML Experiment which I had already run and the compute cluster which I created earlier to create the Pipeline
 
 >Pipeline Created
 
@@ -100,7 +100,7 @@ Now that we have used Azure to configure a cloud based machine learning producti
 
 >![Pipeline](https://github.com/webpagearshi/Operationalizing-ML/blob/master/starter_files/Images/Step7-BankMarketing%20Dataset%20with%20AutoML%20Module-Completed.JPG "AutoML Module")
 
->b. After the pipeline_run object is created we publish the Pipeline
+>b. After the pipeline_run object is created I published the Pipeline
 
 >Pipeline section shows Pipeline Endpoint
 
@@ -119,13 +119,13 @@ Now that we have used Azure to configure a cloud based machine learning producti
 >![Pipeline](https://github.com/webpagearshi/Operationalizing-ML/blob/master/starter_files/Images/Step7-5.JPG "Pipeline")
 
 ## Screen Recording
-[Screencast Link](https://youtu.be/rdz4DlNq-pE "Screencast for Project2-Operationalizing ML")
+[Screencast Link for Project-Operationalizing ML](https://youtu.be/rdz4DlNq-pE "Screencast for Project2-Operationalizing ML")
 
 ## Standout Suggestions
->While creating the Automated ML run I would like to chose validation type instead of using auto. I would also like to enable featurization for feature selection and make changes in feature type and impute with options for the features. Examine imbalanced classes which were detected in input and rectify the issue.
+>While creating the Automated ML run I would like to choose validation type instead of using auto. I would also enable featurization for feature selection and make changes in feature type and impute with options for the features. I will examine imbalanced classes which were detected in input and rectify the issue.
 
 >I would like to try the low priority option when creating the compute cluster and experiment with virtual machine sizes so that I can try and find a cheaper option without affecting the production model and endpoint consumption.
 
->Use Batch Inference Pipeline to do predictions using parallelism. This increases productivity and optimized costs.
+>Use Batch Inference Pipeline to do predictions using parallelism. This increases productivity and optimizes costs.
 
 #### The Udacity Course material and Microsoft Documentation has been used as reference.

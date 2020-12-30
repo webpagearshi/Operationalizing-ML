@@ -8,7 +8,7 @@ Project Link: https://automlsamplenotebookdata.blob.core.windows.net/automl-samp
 
 
 ## Architectural Diagram
- ![Architectural Diagram](Images-Review/Architectural Diagram.png "Architectural Diagram")
+ ![Architectural Diagram](Images-Review/Architectural%20Diagram.png "Architectural Diagram")
 
 ## Key Steps
 In the first section we will configure a cloud based machine learning production model, deployed it and then consumed it

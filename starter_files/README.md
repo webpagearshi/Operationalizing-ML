@@ -114,13 +114,17 @@ Published Pipeline Overview showing a REST Endpoint and status Active
 
 ![Pipeline](Images/Step7-Published%20Pipeline%20Overview.JPG "Published Pipeline")
 
+In Jupyter Notebook we use RunDetail Widget to show the step runs
+
+![RunDetail](Images-Review/Step7-Jupyter-Show-step-runs.JPG "RunDetail Widget")
+![RunDetail](Images-Review/Step7-6.JPG "RunDetail Widget")
 c. Consume a Pipeline endpoint-The first step was to authenticate and then the published Pipeline was used to retrieve the endpoint using Python SDK.
 
 Scheduled Run in the ML Studio
 
-![Pipeline](Images/Step7-Scheduled%20Run.JPG "Pipeline run")
-
 ![Pipeline](Images/Step7-5.JPG "Pipeline")
+
+![Pipeline](Images-Review/Step7-3.JPG "Pipelines")
 
 ## Screen Recording
 [Screencast Link for Project-Operationalizing ML](https://youtu.be/rdz4DlNq-pE "Screencast for Project2-Operationalizing ML")

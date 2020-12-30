@@ -8,7 +8,7 @@ Project Link: https://automlsamplenotebookdata.blob.core.windows.net/automl-samp
 
 
 ## Architectural Diagram
- ![Architectural Diagram](Images-Review/Architectural Diagram.png "Architectural Diagram")
+ ![Architectural Diagram](Images-Review/Architectural%20Diagram.png "Architectural Diagram")
 
 ## Key Steps
 In the first section we will configure a cloud based machine learning production model, deployed it and then consumed it
@@ -69,6 +69,10 @@ Azure provides swagger json file for deployed models. Heading to the Endpoints s
 Screenshot showing that swagger runs on localhost showing the HTTP API methods and responses for the model.
 
 ![Swagger](Images/Step5-Swagger%20runs%20on%20localhost.JPG "swagger runs on localhost")
+![Swagger](Images-Review/Step5-Swagger-Documentation-b.JPG)
+![Swagger](Images-Review/Step5-Swagger-Documentation-c-1.JPG)
+![Swagger](Images-Review/Step5-Swagger-Documentation-c-2.JPG)
+![Swagger](Images-Review/Step5-Swagger-Documentation-d.JPG)
 
 *Step 6*:Consume Model Endpoints and Benchmark the endpoint using Apache Benchmark
 

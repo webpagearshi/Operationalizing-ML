@@ -7,8 +7,8 @@ In the project I have used Azure to configure a cloud based machine learning pro
 Project Link: https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv
 
 
-## Architectural Diagram
- ![Architectural Diagram](https://github.com/webpagearshi/Operationalizing-ML/blob/master/starter_files/Images/Architectural%20Diagram.png "Architectural Diagram")
+## Process Flow Chart
+ ![Process Flow Diagram](/starter_files/Images/Architectural%20Diagram.png "Process Flow Diagram")
 
 #### Project Screenshots and Details are in the starter_files folder.
 

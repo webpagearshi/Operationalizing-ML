@@ -35,13 +35,13 @@ Since I have used the Udacity workspace to complete this project I skipped this 
 <a name="auto"></a>
 *Step 2*: Create and run Auto ML Experiment
 
-a. I have uploaded the dataset into the Azure Studio and created a Registered Dataset
+a. Uploaded the dataset into the Azure Studio and created a Registered Dataset
 
 **Registered Dataset**
 
 ![Registered Dataset](Images/Step1-Registered%20Dataset.JPG "Registered Dataset")
 
-b. Configure a new compute cluster (VM size is Standard_VS12_v2 and minimum nodes is 1) and create a new Automated ML Run. Once the Experiment is completed you can see the Best Model.
+b. Configured a new compute cluster (VM size is Standard_VS12_v2 and minimum nodes is 1) and created a new Automated ML Run. Once the Experiment is completed you can see the Best Model.
 
 **AutoML Experiment Completed**
 
@@ -55,7 +55,7 @@ b. Configure a new compute cluster (VM size is Standard_VS12_v2 and minimum node
 <a name="deploy"></a>
 *Step 3*: Deploy the Model
 
-I have selected the Best Model for Deployment, enabled authentication and deployed the model using Azure Container Instance.
+Select the Best Model for Deployment, enabled authentication and deployed the model using Azure Container Instance.
 
 **Deployment Settings**
 
@@ -71,7 +71,7 @@ a. Enabled Application Insights using Python SDK
 
 ![Application Insights](Images/Step4-Application%20Insights-Enabled.JPG "Application Insights")
 
-b. View the logs in the terminal after we run the logs.py script
+b. View the logs in the terminal after executing the logs.py script
 
 **Logs**
 
@@ -83,7 +83,7 @@ b. View the logs in the terminal after we run the logs.py script
 <a name="swagger"></a>
 *Step 5*:Swagger Documentation
 
-Azure provides swagger json file for deployed models. Heading to the Endpoints section->Details tab I found the Swagger URL which I used to download the file and saved it locally in the same folder as swagger.sh and serve.py files. Executing the swagger.sh script I downloaded the latest Swagger container and ran it on port 9000. Running the script serve.py started a python server on port 8000.
+Azure provides swagger json file for deployed models. Heading to the Endpoints section->Details tab find the Swagger URL which is used to download the file and saved it locally in the same folder as swagger.sh and serve.py files. Execute the swagger.sh script which downloads the latest Swagger container and runs it on port 9000. Running the script serve.py starts a python server on port 8000.
 
 **Screenshot showing that swagger runs on localhost showing the HTTP API methods and responses for the model.**
 
@@ -102,7 +102,7 @@ a. Consume Model Endpoints- Head to the consume tab in the Endpoints section and
 
 ![endpoint](Images/Step6-Endpoint%20result.JPG "Endpoint result")
 
-b. Benchmarking-Make changes in the benchmark.sh file by replacing the authentication key with the primary key of the model and the REST uri with that of the model. After I ran the endpoint.py file, a data.json file appeared in the folder and then I ran the benchmark.sh script.
+b. Benchmarking-Make changes in the benchmark.sh file by replacing the authentication key with the primary key of the model and the REST uri with that of the model. After running the endpoint.py file, a data.json file appears in the folder. Then run the benchmark.sh script.
 
 **Screenshot showing that Apache Benchmark runs against the HTTP API using authentication keys to retrieve performance results.**
 
@@ -110,12 +110,12 @@ b. Benchmarking-Make changes in the benchmark.sh file by replacing the authentic
 ![Benchmarking](Images/Step6-Benchmark.sh%20log-b.JPG "Benchmarking")
 ![Benchmarking](Images/Step6-Benchmark.sh%20log-c.JPG "Benchmarking")
 
-Now that I have used Azure to configure a cloud based machine learning production model, deployed and consumed it I will move to the next section where we will use Python SDK to create, publish and consume a Pipeline.
+Now that we have used Azure to configure a cloud based machine learning production model, deployed and consumed it we will move to the next section where we will use Python SDK to create, publish and consume a Pipeline.
 
 <a name="pipeline"></a>
 *Step 7*: Create , Publish and Consume a Pipeline
 
-a. I used the Auto ML Experiment which I had already run and the compute cluster which I created earlier to create the Pipeline
+a. Use the Auto ML Experiment which has run earlier and the previously created compute cluster to create the Pipeline
 
 **Pipeline Created**
 
@@ -125,7 +125,7 @@ a. I used the Auto ML Experiment which I had already run and the compute cluster
 
 ![Pipeline](Images/Step7-BankMarketing%20Dataset%20with%20AutoML%20Module-Completed.JPG "AutoML Module")
 
-b. After the pipeline_run object is created I published the Pipeline
+b. After the pipeline_run object is created publish the Pipeline
 
 **Pipeline section shows Pipeline Endpoint**
 

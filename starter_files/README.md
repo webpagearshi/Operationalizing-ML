@@ -10,7 +10,7 @@ Project Link: https://automlsamplenotebookdata.blob.core.windows.net/automl-samp
 *[Architectural Diagram](#architectural-diagram)
 
 *[Key Steps](#key-steps)
-    *[Authentication](#auth)
+ *[Authentication](#auth)
     
 *[Screen Recording](#screen-recording)
 

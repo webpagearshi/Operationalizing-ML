@@ -7,17 +7,21 @@ In the project I have used Azure to configure a cloud based machine learning pro
 Project Link: https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv
 
 ## Table of Content
--[Architectural Diagram](#architectural-diagram)
--[Key Steps](#key-steps)
-    -[Authentication](#auth)
--[Screen Recording](#screen-recording)
--[Standout Suggestions](#standout-suggestions)
+*[Architectural Diagram](#architectural-diagram)
+
+*[Key Steps](#key-steps)
+    *[Authentication](#auth)
+    
+*[Screen Recording](#screen-recording)
+
+*[Standout Suggestions](#standout-suggestions)
 
 ## Architectural Diagram
  ![Architectural Diagram](Images-Review/Architectural%20Diagram.png "Architectural Diagram")
 
 ## Key Steps
 In the first section we will configure a cloud based machine learning production model, deployed it and then consumed it
+
 <a name="auth"></a>
 *Step 1*: Authentication
 Since I have used the Udacity workspace to complete this project I skipped this step as I did not have authorization to create a service principal.

@@ -7,14 +7,14 @@ In the project I have used Azure to configure a cloud based machine learning pro
 Project Link: https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv
 
 ## Table of Content
-*[Architectural Diagram](#architectural-diagram)
+* [Architectural Diagram](#architectural-diagram)
 
-*[Key Steps](#key-steps)
- *[Authentication](#auth)
+* [Key Steps](#key-steps)
+  * [Authentication](#auth)
     
-*[Screen Recording](#screen-recording)
+* [Screen Recording](#screen-recording)
 
-*[Standout Suggestions](#standout-suggestions)
+* [Standout Suggestions](#standout-suggestions)
 
 ## Architectural Diagram
  ![Architectural Diagram](Images-Review/Architectural%20Diagram.png "Architectural Diagram")

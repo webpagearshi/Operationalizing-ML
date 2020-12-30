@@ -8,124 +8,124 @@ Project Link: https://automlsamplenotebookdata.blob.core.windows.net/automl-samp
 
 
 ## Architectural Diagram
- ![Architectural Diagram](https://github.com/webpagearshi/Operationalizing-ML/blob/master/starter_files/Images/Architectural%20Diagram.png "Architectural Diagram")
+ ![Architectural Diagram](Images-Review/Architectural Diagram.png "Architectural Diagram")
 
 ## Key Steps
 In the first section we will configure a cloud based machine learning production model, deployed it and then consumed it
 
 *Step 1*: Authentication
->Since I have used the Udacity workspace to complete this project I skipped this step as I did not have authorization to create a service principal.
+Since I have used the Udacity workspace to complete this project I skipped this step as I did not have authorization to create a service principal.
 
 *Step 2*: Create and run AUto ML Experiment
 
->a. I have uploaded the dataset into the Azure Studio and created a Registered Dataset
+a. I have uploaded the dataset into the Azure Studio and created a Registered Dataset
 
->Registered Dataset
+Registered Dataset
 
->![Registered Dataset](https://github.com/webpagearshi/Operationalizing-ML/blob/master/starter_files/Images/Step1-Registered%20Dataset.JPG "Registered Dataset")
+![Registered Dataset](Images/Step1-Registered%20Dataset.JPG "Registered Dataset")
 
->b. Configure a new compute cluster (VM size is Standard_VS12_v2 and minimum nodes is 1) and create a new Automated ML Run. Once the Experiment is completed you can see the Best Model.
+b. Configure a new compute cluster (VM size is Standard_VS12_v2 and minimum nodes is 1) and create a new Automated ML Run. Once the Experiment is completed you can see the Best Model.
 
->AutoML Experiment Completed
+AutoML Experiment Completed
 
->![AutoML Experiment Completed](https://github.com/webpagearshi/Operationalizing-ML/blob/master/starter_files/Images/Step1-Experiment%20Completed.JPG "AutoML Experiment Completed")
+![AutoML Experiment Completed](Images/Step1-Experiment%20Completed.JPG "AutoML Experiment Completed")
 
 
->Best Model
+Best Model
 
->![Best Model](https://github.com/webpagearshi/Operationalizing-ML/blob/master/starter_files/Images/Step1-Best%20Model.JPG "Best Model-Voting Ensemble")
+![Best Model](Images/Step1-Best%20Model.JPG "Best Model-Voting Ensemble")
 
 
 *Step 3*: Deploy the Model
 
->I have selected the Best Model for Deployment, enabled authentication and deployed the model using Azure Container Instance.
+I have selected the Best Model for Deployment, enabled authentication and deployed the model using Azure Container Instance.
 
->Deployment Settings
+Deployment Settings
 
->![Deployment Settings](https://github.com/webpagearshi/Operationalizing-ML/blob/master/starter_files/Images/Step3-Deploying%20the%20Model%20Settings.JPG "Deploying the Best Model")
+![Deployment Settings](Images/Step3-Deploying%20the%20Model%20Settings.JPG "Deploying the Best Model")
 
 
 *Step 4*: Enable Application Insights and retrieve logs
 
->a. Enabled Application Insights using Python SDK
+a. Enabled Application Insights using Python SDK
 
->Application Insights enabled by running logs.py script
+Application Insights enabled by running logs.py script
 
->![Application Insights](https://github.com/webpagearshi/Operationalizing-ML/blob/master/starter_files/Images/Step4-Application%20Insights-Enabled.JPG "Application Insights")
+![Application Insights](Images/Step4-Application%20Insights-Enabled.JPG "Application Insights")
 
->b. View the logs in the terminal after we run the logs.py script
+b. View the logs in the terminal after we run the logs.py script
 
->Logs
+Logs
 
->![Logs](https://github.com/webpagearshi/Operationalizing-ML/blob/master/starter_files/Images/Step4-Logs%20by%20logs.py-a.JPG "logs")
->![Logs](https://github.com/webpagearshi/Operationalizing-ML/blob/master/starter_files/Images/Step4-Logs%20by%20logs.py-b.JPG "logs")
->![Logs](https://github.com/webpagearshi/Operationalizing-ML/blob/master/starter_files/Images/Step4-Logs%20by%20logs.py-c.JPG "logs")
+![Logs](Images/Step4-Logs%20by%20logs.py-a.JPG "logs")
+![Logs](Images/Step4-Logs%20by%20logs.py-b.JPG "logs")
+![Logs](Images/Step4-Logs%20by%20logs.py-c.JPG "logs")
 
 
 *Step 5*:Swagger Documentation
 
->Azure provides swagger json file for deployed models. Heading to the Endpoints section->Details tab I found the Swagger URL which I used to download the file and saved it locally in the same folder as swagger.sh and serve.py files. Executing the swagger.sh script I downloaded the latest Swagger container and ran it on port 9000. Running the script serve.py started a python server on port 8000.
+Azure provides swagger json file for deployed models. Heading to the Endpoints section->Details tab I found the Swagger URL which I used to download the file and saved it locally in the same folder as swagger.sh and serve.py files. Executing the swagger.sh script I downloaded the latest Swagger container and ran it on port 9000. Running the script serve.py started a python server on port 8000.
 
->Screenshot showing that swagger runs on localhost showing the HTTP API methods and responses for the model.
+Screenshot showing that swagger runs on localhost showing the HTTP API methods and responses for the model.
 
->![Swagger](https://github.com/webpagearshi/Operationalizing-ML/blob/master/starter_files/Images/Step5-Swagger%20runs%20on%20localhost.JPG "swagger runs on localhost")
+![Swagger](Images/Step5-Swagger%20runs%20on%20localhost.JPG "swagger runs on localhost")
 
 *Step 6*:Consume Model Endpoints and Benchmark the endpoint using Apache Benchmark
 
->a. Consume Model Endpoints- Head to the consume tab in the Endpoints section and then note the REST Endpoint URI and Primary Key and then in the endpoint.py file modify the scoring_uri and key to match them respectively. Now execute the enddpoint.py file and you will see the output from the model in the terminal.
+a. Consume Model Endpoints- Head to the consume tab in the Endpoints section and then note the REST Endpoint URI and Primary Key and then in the endpoint.py file modify the scoring_uri and key to match them respectively. Now execute the enddpoint.py file and you will see the output from the model in the terminal.
 
->Consume Model Endpoints
+Consume Model Endpoints
 
->![endpoint](https://github.com/webpagearshi/Operationalizing-ML/blob/master/starter_files/Images/Step6-Endpoint%20result.JPG "Endpoint result")
+![endpoint](Images/Step6-Endpoint%20result.JPG "Endpoint result")
 
->b. Benchmarking-Make changes in the benchmark.sh file by replacing the authentication key with the primary key of the model and the REST uri with that of the model. After I ran the endpoint.py file, a data.json file appeared in the folder and then I ran the benchmark.sh script.
+b. Benchmarking-Make changes in the benchmark.sh file by replacing the authentication key with the primary key of the model and the REST uri with that of the model. After I ran the endpoint.py file, a data.json file appeared in the folder and then I ran the benchmark.sh script.
 
->Screenshot showing that Apache Benchmark runs against the HTTP API using authentication keys to retrieve performance results.
+Screenshot showing that Apache Benchmark runs against the HTTP API using authentication keys to retrieve performance results.
 
->![Benchmarking](https://github.com/webpagearshi/Operationalizing-ML/blob/master/starter_files/Images/Step6-Benchmark.sh%20log-a.JPG "Benchmarking")
->![Benchmarking](https://github.com/webpagearshi/Operationalizing-ML/blob/master/starter_files/Images/Step6-Benchmark.sh%20log-b.JPG "Benchmarking")
->![Benchmarking](https://github.com/webpagearshi/Operationalizing-ML/blob/master/starter_files/Images/Step6-Benchmark.sh%20log-c.JPG "Benchmarking")
+![Benchmarking](Images/Step6-Benchmark.sh%20log-a.JPG "Benchmarking")
+![Benchmarking](Images/Step6-Benchmark.sh%20log-b.JPG "Benchmarking")
+![Benchmarking](Images/Step6-Benchmark.sh%20log-c.JPG "Benchmarking")
 
 Now that I have used Azure to configure a cloud based machine learning production model, deployed and consumed it I will move to the next section where we will use Python SDK to create, publish and consume a Pipeline.
 
 *Step 7*: Create , Publish and Consume a Pipeline
 
-> a. I used the Auto ML Experiment which I had already run and the compute cluster which I created earlier to create the Pipeline
+a. I used the Auto ML Experiment which I had already run and the compute cluster which I created earlier to create the Pipeline
 
->Pipeline Created
+Pipeline Created
 
->![Pipeline](https://github.com/webpagearshi/Operationalizing-ML/blob/master/starter_files/Images/Step7-Pipeline%20Created%20Completed.JPG "Pipeline Created")
+![Pipeline](Images/Step7-Pipeline%20Created%20Completed.JPG "Pipeline Created")
 
->BankMarketing Dataset with AutoML Module
+BankMarketing Dataset with AutoML Module
 
->![Pipeline](https://github.com/webpagearshi/Operationalizing-ML/blob/master/starter_files/Images/Step7-BankMarketing%20Dataset%20with%20AutoML%20Module-Completed.JPG "AutoML Module")
+![Pipeline](Images/Step7-BankMarketing%20Dataset%20with%20AutoML%20Module-Completed.JPG "AutoML Module")
 
->b. After the pipeline_run object is created I published the Pipeline
+b. After the pipeline_run object is created I published the Pipeline
 
->Pipeline section shows Pipeline Endpoint
+Pipeline section shows Pipeline Endpoint
 
->![Pipeline](https://github.com/webpagearshi/Operationalizing-ML/blob/master/starter_files/Images/Step7-Pipeline-Endpoint.JPG "published pipeline")
+![Pipeline](Images/Step7-Pipeline-Endpoint.JPG "published pipeline")
 
->Published Pipeline Overview showing a REST Endpoint and status Active
+Published Pipeline Overview showing a REST Endpoint and status Active
 
->![Pipeline](https://github.com/webpagearshi/Operationalizing-ML/blob/master/starter_files/Images/Step7-Published%20Pipeline%20Overview.JPG "Published Pipeline")
+![Pipeline](Images/Step7-Published%20Pipeline%20Overview.JPG "Published Pipeline")
 
->c. Consume a Pipeline endpoint-The first step was to authenticate and then the published Pipeline was used to retrieve the endpoint using Python SDK.
+c. Consume a Pipeline endpoint-The first step was to authenticate and then the published Pipeline was used to retrieve the endpoint using Python SDK.
 
->Scheduled Run in the ML Studio
+Scheduled Run in the ML Studio
 
->![Pipeline](https://github.com/webpagearshi/Operationalizing-ML/blob/master/starter_files/Images/Step7-Scheduled%20Run.JPG "Pipeline run")
+![Pipeline](Images/Step7-Scheduled%20Run.JPG "Pipeline run")
 
->![Pipeline](https://github.com/webpagearshi/Operationalizing-ML/blob/master/starter_files/Images/Step7-5.JPG "Pipeline")
+![Pipeline](Images/Step7-5.JPG "Pipeline")
 
 ## Screen Recording
 [Screencast Link for Project-Operationalizing ML](https://youtu.be/rdz4DlNq-pE "Screencast for Project2-Operationalizing ML")
 
 ## Standout Suggestions
->While creating the Automated ML run I would like to choose validation type instead of using auto. I would also enable featurization for feature selection and make changes in feature type and impute with options for the features. I will examine imbalanced classes which were detected in input and rectify the issue.
+1. While creating the Automated ML run I would like to choose validation type instead of using auto. I would also enable featurization for feature selection and make changes in feature type and impute with options for the features. I will examine imbalanced classes which were detected in input and rectify the issue.
 
->I would like to try the low priority option when creating the compute cluster and experiment with virtual machine sizes so that I can try and find a cheaper option without affecting the production model and endpoint consumption.
+2. When creating the compute cluster I would like to experiment with virtual machine sizes so that I can try and find a cheaper option without affecting the production model and endpoint consumption.
 
->Use Batch Inference Pipeline to do predictions using parallelism. This increases productivity and optimizes costs.
+3. Use Batch Inference Pipeline to do predictions using parallelism. This increases productivity and optimizes costs.
 
 #### The Udacity Course material and Microsoft Documentation has been used as reference.

@@ -11,6 +11,12 @@ Project Link: https://automlsamplenotebookdata.blob.core.windows.net/automl-samp
 
 * [Key Steps](#key-steps)
   * [Authentication](#auth)
+  * [Create and run Auto ML Experiment](#auto)
+  * [Deploy the Model](#deploy)
+  * [Enable Application Insights and retrieve logs](#app)
+  * [Swagger Documentation](#swagger)
+  * [Consume Model Endpoints and Benchmark the endpoint using Apache Benchmark](#consume)
+  * [Create , Publish and Consume a Pipeline](#pipeline)
     
 * [Screen Recording](#screen-recording)
 
@@ -26,7 +32,8 @@ In the first section we will configure a cloud based machine learning production
 *Step 1*: Authentication
 Since I have used the Udacity workspace to complete this project I skipped this step as I did not have authorization to create a service principal.
 
-*Step 2*: Create and run AUto ML Experiment
+<a name="auto"></a>
+*Step 2*: Create and run Auto ML Experiment
 
 a. I have uploaded the dataset into the Azure Studio and created a Registered Dataset
 
@@ -45,7 +52,7 @@ b. Configure a new compute cluster (VM size is Standard_VS12_v2 and minimum node
 
 ![Best Model](Images/Step1-Best%20Model.JPG "Best Model-Voting Ensemble")
 
-
+<a name="deploy"></a>
 *Step 3*: Deploy the Model
 
 I have selected the Best Model for Deployment, enabled authentication and deployed the model using Azure Container Instance.
@@ -55,6 +62,7 @@ I have selected the Best Model for Deployment, enabled authentication and deploy
 ![Deployment Settings](Images/Step3-Deploying%20the%20Model%20Settings.JPG "Deploying the Best Model")
 
 
+<a name="app"></a>
 *Step 4*: Enable Application Insights and retrieve logs
 
 a. Enabled Application Insights using Python SDK
@@ -72,6 +80,7 @@ b. View the logs in the terminal after we run the logs.py script
 ![Logs](Images/Step4-Logs%20by%20logs.py-c.JPG "logs")
 
 
+<a name="swagger"></a>
 *Step 5*:Swagger Documentation
 
 Azure provides swagger json file for deployed models. Heading to the Endpoints section->Details tab I found the Swagger URL which I used to download the file and saved it locally in the same folder as swagger.sh and serve.py files. Executing the swagger.sh script I downloaded the latest Swagger container and ran it on port 9000. Running the script serve.py started a python server on port 8000.
@@ -84,6 +93,7 @@ Azure provides swagger json file for deployed models. Heading to the Endpoints s
 ![Swagger](Images-Review/Step5-Swagger-Documentation-c-2.JPG)
 ![Swagger](Images-Review/Step5-Swagger-Documentation-d.JPG)
 
+<a name="consume"></a>
 *Step 6*:Consume Model Endpoints and Benchmark the endpoint using Apache Benchmark
 
 a. Consume Model Endpoints- Head to the consume tab in the Endpoints section and then note the REST Endpoint URI and Primary Key and then in the endpoint.py file modify the scoring_uri and key to match them respectively. Now execute the enddpoint.py file and you will see the output from the model in the terminal.
@@ -102,6 +112,7 @@ b. Benchmarking-Make changes in the benchmark.sh file by replacing the authentic
 
 Now that I have used Azure to configure a cloud based machine learning production model, deployed and consumed it I will move to the next section where we will use Python SDK to create, publish and consume a Pipeline.
 
+<a name="pipeline"></a>
 *Step 7*: Create , Publish and Consume a Pipeline
 
 a. I used the Auto ML Experiment which I had already run and the compute cluster which I created earlier to create the Pipeline
